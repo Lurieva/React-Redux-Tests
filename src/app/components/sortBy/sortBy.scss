@@ -1,0 +1,40 @@
+.sortBy {
+    color: black;
+    display: flex;
+
+    &__title {
+        margin-right: 20px;
+        font-weight: bold;
+    }
+
+    label {
+        margin-bottom: 0;
+        padding: 0;
+        overflow: hidden;
+        border-radius: 0;
+        border: none;
+        color: black;
+        width: 100px;
+        background: transparent;
+        font-weight: bold;
+           
+        span {
+            display: block;
+            padding: 10px 15px;
+        }
+        
+        input[type=radio] {
+            display: none;
+        }
+        
+        input:checked + span {
+            display: block;
+            color: #fff;
+            background-color: #285e8e;
+        }
+    }
+
+    .radio-active {
+        color: red;
+    }
+}

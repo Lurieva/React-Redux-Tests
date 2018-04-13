@@ -1,0 +1,22 @@
+.header {
+    background: black;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+
+    &__logo {
+        margin: 0 50px;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    &__search-button {
+        border-radius: 0;
+        color: red;
+        background: white;
+        padding: 5px 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: none;
+    }
+}
