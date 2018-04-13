@@ -3,6 +3,7 @@ import { AppContainer } from 'react-hot-loader';
 
 import { Router, Route, Switch, Redirect } from 'react-router';
 import createBrowserHistory from 'history/createBrowserHistory';
+import ExampleBoundary from './ErrorBoundary'
 
 const history = createBrowserHistory();
 
@@ -14,7 +15,7 @@ import { MoviesPage, MovieDetailsPage } from './features';
 import { MainLayout, NotFound } from './components';
 
 const App = () => {
-    return (      
+    return (    
         <MainLayout>
             <Router history={history}>
                 <Switch>
