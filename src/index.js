@@ -6,9 +6,13 @@ import App from './app/App';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
+import ErrorBoundary from './app/ErrorBoundary';
+
 ReactDOM.render(
     <AppContainer>
-        <App />
+        <ErrorBoundary>
+            <App />
+        </ErrorBoundary>
     </AppContainer>,
     document.getElementById('root')
 );
