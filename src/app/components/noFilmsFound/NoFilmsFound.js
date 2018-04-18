@@ -4,7 +4,7 @@ import './noFilmsFound.scss';
 
 const NoFilmsFound = () => (
     <div className="noFilmsFound">
-        No Films Found
+        No films found
     </div>
 );
 

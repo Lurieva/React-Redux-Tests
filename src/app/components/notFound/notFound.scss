@@ -1,6 +1,24 @@
 .notFound {
-    font-weight: bold;
-    font-size: 30px;
-    text-transform: uppercase;
-    color: red;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__content {
+        &__title {
+            font-weight: bold;
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+    
+        &__backBtn {
+            background: red;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: 0;
+            margin: 0 auto;
+            display: flex;
+        }
+    }
 }

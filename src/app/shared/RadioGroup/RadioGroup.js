@@ -24,12 +24,12 @@ const RadioGroup = ({ name, param, options, title, onChange, groupClassName }) =
 );
 
 RadioGroup.propTypes = {  
-  title: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  options: PropTypes.array.isRequired,
-  onChange: PropTypes.func.isRequired,
-  param: PropTypes.string.isRequired,
-  groupClassName: PropTypes.string
+    title: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    options: PropTypes.array.isRequired,
+    onChange: PropTypes.func.isRequired,
+    param: PropTypes.string.isRequired,
+    groupClassName: PropTypes.string
 };
 
 export default RadioGroup;

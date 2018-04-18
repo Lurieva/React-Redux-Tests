@@ -1,11 +1,8 @@
 .noFilmsFound {
-    text-transform: uppercase;
     font-weight: bold;
-    height: 300px;
-    font-size: 30px;
-    color: #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

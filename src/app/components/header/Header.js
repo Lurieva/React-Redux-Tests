@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { Button, LogoName } from '../../shared';
 
@@ -19,5 +20,9 @@ const Header = ({ isShowSearchBtn, children }) => (
         {children}
     </header> 
 );
+
+Header.propTypes = {
+    children: PropTypes.element.isRequired
+};
 
 export default Header;
