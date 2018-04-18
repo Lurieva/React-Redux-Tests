@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import RadioGroup from './RadioGroup.js';
+import RadioGroup from './RadioGroup';
 
 describe('RadioGroup', () => {
     it('should be defined', () => {
