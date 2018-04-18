@@ -13,7 +13,7 @@ module.exports = merge(baseConfig, {
     entry: [
         'react-hot-loader/patch'
     ],
-    devtool: process.env.WEBPACK_DEVTOOL || 'eval-source-map',
+    devtool: 'eval-source-map',
     output: {
         publicPath: '/',
         path: path.join(__dirname, 'dist'),
@@ -34,6 +34,7 @@ module.exports = merge(baseConfig, {
         new webpack.HotModuleReplacementPlugin(),
         new DashboardPlugin(),
         new HtmlWebpackPlugin({
+            title: 'Movies React',
             template: './src/index.html',
             filename: 'index.html',
             inject: 'body'
