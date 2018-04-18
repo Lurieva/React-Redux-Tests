@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const path = require('path');
 const rules = require('./rules');
 
 module.exports = {
@@ -9,5 +8,8 @@ module.exports = {
     },
     module: {
         rules
+    },
+    performance: {
+        hints: false
     }
 };
