@@ -9,5 +9,8 @@ module.exports = {
     },
     module: {
         rules
+    },
+    performance: {
+        hints: false
     }
 };
