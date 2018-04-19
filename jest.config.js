@@ -1,6 +1,7 @@
-{
-    testResultsProcessor: "./node_modules/jest-html-reporter",
-    { 
-        collectCoverageFrom: ["src/**/*.js"]
-    }
-}
+module.exports = {
+    verbose: true,
+    moduleNameMapper: {
+        "\.scss$": "identity-obj-proxy"
+    },
+    setupTestFrameworkScriptFile: './test/test-setup.js'
+};
