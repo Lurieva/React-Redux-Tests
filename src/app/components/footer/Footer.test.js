@@ -1,15 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import NoFilmsFound from './NoFilmsFound';
+import Footer from './Footer';
 
-describe('NoFilmsFound', () => {
+jest.mock('../../shared/LogoName/LogoName', () => 'LogoName');
+
+describe('Footer', () => {
     it('should be defined', () => {
-        expect(NoFilmsFound).toBeDefined();
+        expect(Footer).toBeDefined();
     });
 
     it('should render correctly', () => {
         const tree = shallow(
-            <NoFilmsFound />
+            <Footer />
         );
 
         expect(tree).toMatchSnapshot();

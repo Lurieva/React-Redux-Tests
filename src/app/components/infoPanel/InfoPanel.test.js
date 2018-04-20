@@ -6,4 +6,12 @@ describe('InfoPanel', () => {
     it('should be defined', () => {
         expect(InfoPanel).toBeDefined();
     });
+
+    it('should render correctly', () => {
+        const tree = shallow(
+            <InfoPanel />
+        );
+
+        expect(tree).toMatchSnapshot();
+    });
 });

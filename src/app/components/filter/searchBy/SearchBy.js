@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import PropTypes from 'prop-types';
 
 import { SEARCH_BY } from '../../../app.config';
@@ -8,11 +8,11 @@ import './searchBy.scss';
 
 const SearchBy = ({ searchBy, onChange }) => (
    <RadioGroup name={'search'}
-                    groupClassName={'searchBy'}
-                    param={searchBy} 
-                    options={[SEARCH_BY.TITLE, SEARCH_BY.DIRECTOR]}
-                    title={'Search By'}
-                    onChange={onChange} />
+               groupClassName={'searchBy'}
+               param={searchBy}
+               options={[SEARCH_BY.TITLE, SEARCH_BY.DIRECTOR]}
+               title={'Search By'}
+               onChange={onChange} />
 );
 
 SearchBy.propTypes = {

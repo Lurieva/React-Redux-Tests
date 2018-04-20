@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortBy should render correctly  1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SortBy
+    onChangeSortBy={[MockFunction]}
+    sortBy="sort"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "groupClassName": "sortBy",
+      "name": "sortBy",
+      "onChange": [MockFunction],
+      "options": Array [
+        Object {
+          "label": "release date",
+          "value": "release_date",
+        },
+        Object {
+          "label": "rating",
+          "value": "vote_average",
+        },
+      ],
+      "param": "sort",
+      "title": "Sort By",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": "RadioGroup",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "groupClassName": "sortBy",
+        "name": "sortBy",
+        "onChange": [MockFunction],
+        "options": Array [
+          Object {
+            "label": "release date",
+            "value": "release_date",
+          },
+          Object {
+            "label": "rating",
+            "value": "vote_average",
+          },
+        ],
+        "param": "sort",
+        "title": "Sort By",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": "RadioGroup",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

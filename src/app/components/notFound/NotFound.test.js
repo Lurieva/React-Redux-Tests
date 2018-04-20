@@ -1,15 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import NoFilmsFound from './NoFilmsFound';
+import NotFound from './NotFound';
 
-describe('NoFilmsFound', () => {
+jest.mock('../../shared/Button/Button', () => 'Button');
+
+describe('NotFound', () => {
+    let mockFn = jest.fn();
+
     it('should be defined', () => {
-        expect(NoFilmsFound).toBeDefined();
+        expect(NotFound).toBeDefined();
     });
 
     it('should render correctly', () => {
         const tree = shallow(
-            <NoFilmsFound />
+            <NotFound />
         );
 
         expect(tree).toMatchSnapshot();
