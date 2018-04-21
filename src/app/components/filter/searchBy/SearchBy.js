@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import PropTypes from 'prop-types';
 
 import { SEARCH_BY } from '../../../app.config';
-import RadioGroup from '../../../shared/RadioGroup/RadioGroup';
+import { RadioGroup } from '../../../shared';
 
 import './searchBy.scss';
 
