@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movies should render correctly  1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Movies
+    movies={
+      Array [
+        Object {
+          "id": 1,
+          "name": "movie_1",
+        },
+        Object {
+          "id": 2,
+          "name": "movie_2",
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Movie
+          movie={
+            Object {
+              "id": 1,
+              "name": "movie_1",
+            }
+          }
+        />,
+        <Movie
+          movie={
+            Object {
+              "id": 2,
+              "name": "movie_2",
+            }
+          }
+        />,
+      ],
+      "className": "movies-container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "1",
+        "nodeType": "host",
+        "props": Object {
+          "movie": Object {
+            "id": 1,
+            "name": "movie_1",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "Movie",
+      },
+      Object {
+        "instance": null,
+        "key": "2",
+        "nodeType": "host",
+        "props": Object {
+          "movie": Object {
+            "id": 2,
+            "name": "movie_2",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "Movie",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Movie
+            movie={
+              Object {
+                "id": 1,
+                "name": "movie_1",
+              }
+            }
+          />,
+          <Movie
+            movie={
+              Object {
+                "id": 2,
+                "name": "movie_2",
+              }
+            }
+          />,
+        ],
+        "className": "movies-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "1",
+          "nodeType": "host",
+          "props": Object {
+            "movie": Object {
+              "id": 1,
+              "name": "movie_1",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "Movie",
+        },
+        Object {
+          "instance": null,
+          "key": "2",
+          "nodeType": "host",
+          "props": Object {
+            "movie": Object {
+              "id": 2,
+              "name": "movie_2",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "Movie",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
