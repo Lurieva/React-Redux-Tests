@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { BASE_URL } from '../../app.config';
 
-import { Filter, Header, Footer, InfoPanel, Movies, SortBy } from '../../components';
+import { Filter, Header, InfoPanel, Movies, SortBy } from '../../components';
 import MoviesInfoPanel from './moviesInfoPanel/MoviesInfoPanel';
 import { SEARCH_BY, SORT_BY, API_KEY } from '../../app.config';
  

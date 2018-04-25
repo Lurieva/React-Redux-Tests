@@ -4,7 +4,6 @@ import MoviesPage from './MoviesPage';
 
 jest.mock('../../components/filter/Filter', () => 'Filter');
 jest.mock('../../components/header/Header', () => 'Header');
-jest.mock('../../components/footer/Footer', () => 'Footer');
 jest.mock('../../components/infoPanel/InfoPanel', () => 'InfoPanel');
 jest.mock('../../components/movies/Movies', () => 'Movies');
 jest.mock('../../components/sortBy/SortBy', () => 'SortBy');
@@ -75,13 +74,13 @@ describe('MoviesPage', () => {
 
     it('should sort array', () => {
         const expectedResult = [{
-            date: '13-01-2018',
-            id: 2, 
-            title: 'title_2'
-        }, {
             date: '12-01-2018', 
             id: 1, 
             title: 'title_1'
+        }, {
+            date: '13-01-2018',
+            id: 2, 
+            title: 'title_2'
         }];
 
         const result = tree.instance().sortArray(moviesMock, 'date');
