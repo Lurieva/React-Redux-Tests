@@ -13,8 +13,8 @@ class MoviesPage extends Component {
         searchBy: SEARCH_BY.TITLE.value,
         filter: '',
         sortBy: SORT_BY.RELEASE_DATE.value,
-        filteredMovies: []
-    }
+        appliedFilter: null
+    };
 
     componentDidMount() {
         this.fetchMovies();
@@ -31,54 +31,66 @@ class MoviesPage extends Component {
     }
 
     applyFilter = () => {
-        const { movies, searchBy, filter } = this.state;
+        const { filter } = this.state;
 
-        const filteredMovies = [...movies].filter((movie) => movie[searchBy].toLowerCase().includes(filter.toLowerCase()));
-        
-        this.setState({ filteredMovies });
+        this.setState({
+            appliedFilter: filter
+        });
     }
 
-    setSearchBy = (event) => {
-        const { target } = event;
-
+    setSearchBy = ({ target }) => {
         this.setState({
             searchBy: target.value
         });
     }
 
-    setFilter = (event) => {
-        const { target } = event;
-
+    setFilter = ({ target }) => {
         this.setState({
             filter: target.value
         });
     }
 
-    setSortBy = (event) => {
-        const { target } = event;
-
+    setSortBy = ({ target }) => {
         this.setState({
             sortBy: target.value
         });
     }
 
+    sortArray = (movies, sortBy) => {
+        return [...movies].sort((a, b) => {
+            if (sortBy === SORT_BY.RELEASE_DATE.value) {
+                return new Date(b[sortBy]) - new Date(a[sortBy]);
+            }
+
+            if (sortBy === SORT_BY.RATING.value) {
+                return b[sortBy] - a[sortBy]; 
+            }
+        });
+    }
+
+    filteredArray = (movies, searchBy, filter) => {
+        return [...movies].filter((movie) => {
+            if (movie[searchBy]) {
+                return movie[searchBy].toLowerCase().includes(filter.toLowerCase());
+            }
+        });
+    }
+
+    getFilteredMovies = () => {
+        const { movies, searchBy, appliedFilter, sortBy } = this.state;
+       
+        return (appliedFilter !== null) ? this.sortArray(this.filteredArray(movies, searchBy, appliedFilter), sortBy) : [];
+    }
+
     render() {
-        const { filteredMovies, sortBy, ...data } = this.state;
-
-        filteredMovies.sort((a, b) => {
-               if (sortBy === SORT_BY.RELEASE_DATE.value) {
-                   return new Date(a[sortBy]) - new Date(b[sortBy]);
-               }
-
-               if (sortBy === SORT_BY.RATING.value) {
-                   return a[sortBy] - b[sortBy]; 
-               }
-        }).reverse();
+        const { sortBy, searchBy, filter } = this.state;
+        const filteredMovies = this.getFilteredMovies();
 
         return (
             <Fragment>
                 <Header isShowSearchBtn={false}>
-                    <Filter {...data}
+                    <Filter searchBy={searchBy}
+                            filter={filter}
                             onChangeSearchBy={this.setSearchBy}
                             onFilterChange={this.setFilter}
                             onClick={this.applyFilter} />
