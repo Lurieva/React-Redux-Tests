@@ -93,7 +93,7 @@ class MoviesPage extends Component {
                             filter={filter}
                             onChangeSearchBy={this.setSearchBy}
                             onFilterChange={this.setFilter}
-                            onClick={this.applyFilter} />
+                            onApplyFilter={this.applyFilter} />
                 </Header>
                 <InfoPanel>
                     <MoviesInfoPanel count={filteredMovies.length}>
