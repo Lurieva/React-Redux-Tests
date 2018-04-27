@@ -23,8 +23,8 @@ ShallowWrapper {
         >
           <Filter
             filter=""
+            onApplyFilter={[Function]}
             onChangeSearchBy={[Function]}
-            onClick={[Function]}
             onFilterChange={[Function]}
             searchBy="title"
           />
@@ -53,8 +53,8 @@ ShallowWrapper {
         "props": Object {
           "children": <Filter
             filter=""
+            onApplyFilter={[Function]}
             onChangeSearchBy={[Function]}
-            onClick={[Function]}
             onFilterChange={[Function]}
             searchBy="title"
           />,
@@ -67,8 +67,8 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "filter": "",
+            "onApplyFilter": [Function],
             "onChangeSearchBy": [Function],
-            "onClick": [Function],
             "onFilterChange": [Function],
             "searchBy": "title",
           },
@@ -147,8 +147,8 @@ ShallowWrapper {
           >
             <Filter
               filter=""
+              onApplyFilter={[Function]}
               onChangeSearchBy={[Function]}
-              onClick={[Function]}
               onFilterChange={[Function]}
               searchBy="title"
             />
@@ -177,8 +177,8 @@ ShallowWrapper {
           "props": Object {
             "children": <Filter
               filter=""
+              onApplyFilter={[Function]}
               onChangeSearchBy={[Function]}
-              onClick={[Function]}
               onFilterChange={[Function]}
               searchBy="title"
             />,
@@ -191,8 +191,8 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "filter": "",
+              "onApplyFilter": [Function],
               "onChangeSearchBy": [Function],
-              "onClick": [Function],
               "onFilterChange": [Function],
               "searchBy": "title",
             },

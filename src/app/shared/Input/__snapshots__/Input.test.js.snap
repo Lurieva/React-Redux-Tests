@@ -6,6 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Input
     className="classNameMock"
+    enterClick={[MockFunction]}
     onChange={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -22,6 +23,7 @@ ShallowWrapper {
     "props": Object {
       "className": "classNameMock",
       "onChange": [MockFunction],
+      "onKeyPress": [Function],
     },
     "ref": null,
     "rendered": null,
@@ -35,6 +37,7 @@ ShallowWrapper {
       "props": Object {
         "className": "classNameMock",
         "onChange": [MockFunction],
+        "onKeyPress": [Function],
       },
       "ref": null,
       "rendered": null,

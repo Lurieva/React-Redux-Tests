@@ -4,25 +4,29 @@ import Input from './Input';
 
 describe('Input', () => {
     const mockFn = jest.fn();
+    let tree;
+
+    beforeEach(() => {
+        tree = shallow(
+            <Input className='classNameMock' onChange={mockFn} enterClick={mockFn}/>
+        );
+    });
 
     it('should be defined', () => {
         expect(Input).toBeDefined();
     });
 
     it('should render correctly', () => {
-        const tree = shallow(
-          <Input className='classNameMock' onChange={mockFn} />
-        );
-
         expect(tree).toMatchSnapshot();
     });
 
-    it('should call mock function when input change', () => {
-        const tree = shallow(
-            <Input className='classNameMock' onChange={mockFn} />
-        );
-
+    it('should call function when input change', () => {
         tree.simulate('change');
+        expect(mockFn).toHaveBeenCalled();
+    });
+
+    it('should call function when enter press', () => {
+        tree.simulate('keyPress', { key: 'Enter' });
         expect(mockFn).toHaveBeenCalled();
     });
 });

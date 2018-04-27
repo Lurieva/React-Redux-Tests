@@ -68,19 +68,23 @@ class MoviesPage extends Component {
         });
     }
 
-    filteredArray = (movies, searchBy, filter) => {
-        return [...movies].filter((movie) => movie[searchBy].toLowerCase().includes(filter.toLowerCase()));
+    getFilteredMovies = (movies, searchBy, filter) => {
+        return [...movies].filter((movie) => {
+            if (movie[searchBy]) {
+                return movie[searchBy].toLowerCase().includes(filter.toLowerCase());
+            }
+        });
     }
 
-    getFilteredMovies = () => {
+    getFilteredAndSortMovies = () => {
         const { movies, searchBy, appliedFilter, sortBy } = this.state;
        
-        return (appliedFilter !== null) ? this.sortArray(this.filteredArray(movies, searchBy, appliedFilter), sortBy) : [];
+        return (appliedFilter !== null) ? this.sortArray(this.getFilteredMovies(movies, searchBy, appliedFilter), sortBy) : [];
     }
 
     render() {
-        const { movies, sortBy, searchBy, filter } = this.state;
-        const filteredMovies = this.getFilteredMovies(movies);
+        const { sortBy, searchBy, filter } = this.state;
+        const filteredMovies = this.getFilteredAndSortMovies();
 
         return (
             <Fragment>
@@ -89,7 +93,7 @@ class MoviesPage extends Component {
                             filter={filter}
                             onChangeSearchBy={this.setSearchBy}
                             onFilterChange={this.setFilter}
-                            onClick={this.applyFilter} />
+                            onApplyFilter={this.applyFilter} />
                 </Header>
                 <InfoPanel>
                     <MoviesInfoPanel count={filteredMovies.length}>

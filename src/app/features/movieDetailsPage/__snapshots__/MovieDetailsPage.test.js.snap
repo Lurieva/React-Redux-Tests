@@ -34,9 +34,8 @@ ShallowWrapper {
           />
         </Header>,
         <InfoPanel>
-          <DirectorInfo
-            count={0}
-            director="Director"
+          <GenresInfo
+            genres={undefined}
           />
         </InfoPanel>,
         <Movies
@@ -75,9 +74,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <DirectorInfo
-            count={0}
-            director="Director"
+          "children": <GenresInfo
+            genres={undefined}
           />,
         },
         "ref": null,
@@ -86,12 +84,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "count": 0,
-            "director": "Director",
+            "genres": undefined,
           },
           "ref": null,
           "rendered": null,
-          "type": "DirectorInfo",
+          "type": "GenresInfo",
         },
         "type": "InfoPanel",
       },
@@ -124,9 +121,8 @@ ShallowWrapper {
             />
           </Header>,
           <InfoPanel>
-            <DirectorInfo
-              count={0}
-              director="Director"
+            <GenresInfo
+              genres={undefined}
             />
           </InfoPanel>,
           <Movies
@@ -165,9 +161,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <DirectorInfo
-              count={0}
-              director="Director"
+            "children": <GenresInfo
+              genres={undefined}
             />,
           },
           "ref": null,
@@ -176,12 +171,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "count": 0,
-              "director": "Director",
+              "genres": undefined,
             },
             "ref": null,
             "rendered": null,
-            "type": "DirectorInfo",
+            "type": "GenresInfo",
           },
           "type": "InfoPanel",
         },

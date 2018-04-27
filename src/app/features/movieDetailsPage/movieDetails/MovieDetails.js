@@ -16,8 +16,6 @@ const MovieDetails = ({ movie }) => {
                 <div className="movie-details__info__tagline">{movie.tagline}</div>
                 <div className="movie-details__info__year">{year}</div>
                 <div className="movie-details__info__overview">{movie.overview}</div>
-                <div className="movie-details__info__director">Director: </div>
-                <div className="movie-details__info__director">Cast: </div>
             </div>
         </div>
     );

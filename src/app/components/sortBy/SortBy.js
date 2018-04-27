@@ -9,7 +9,7 @@ import './sortBy.scss';
 const SortBy = ({ sortBy, onChangeSortBy }) => (
     <RadioGroup name={'sortBy'}
                 groupClassName={'sortBy'}
-                param={sortBy}
+                param={sortBy} 
                 options={[SORT_BY.RELEASE_DATE, SORT_BY.RATING]}
                 title={'Sort By'}
                 onChange={onChangeSortBy} />

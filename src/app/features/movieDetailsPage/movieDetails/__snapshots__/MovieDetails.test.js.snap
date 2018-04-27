@@ -60,16 +60,6 @@ ShallowWrapper {
           >
             overview
           </div>
-          <div
-            className="movie-details__info__director"
-          >
-            Director: 
-          </div>
-          <div
-            className="movie-details__info__director"
-          >
-            Cast: 
-          </div>
         </div>,
       ],
       "className": "movie-details",
@@ -128,16 +118,6 @@ ShallowWrapper {
             >
               overview
             </div>,
-            <div
-              className="movie-details__info__director"
-            >
-              Director: 
-            </div>,
-            <div
-              className="movie-details__info__director"
-            >
-              Cast: 
-            </div>,
           ],
           "className": "movie-details__info",
         },
@@ -191,30 +171,6 @@ ShallowWrapper {
             "rendered": "overview",
             "type": "div",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Director: ",
-              "className": "movie-details__info__director",
-            },
-            "ref": null,
-            "rendered": "Director: ",
-            "type": "div",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Cast: ",
-              "className": "movie-details__info__director",
-            },
-            "ref": null,
-            "rendered": "Cast: ",
-            "type": "div",
-          },
         ],
         "type": "div",
       },
@@ -258,16 +214,6 @@ ShallowWrapper {
               className="movie-details__info__overview"
             >
               overview
-            </div>
-            <div
-              className="movie-details__info__director"
-            >
-              Director: 
-            </div>
-            <div
-              className="movie-details__info__director"
-            >
-              Cast: 
             </div>
           </div>,
         ],
@@ -327,16 +273,6 @@ ShallowWrapper {
               >
                 overview
               </div>,
-              <div
-                className="movie-details__info__director"
-              >
-                Director: 
-              </div>,
-              <div
-                className="movie-details__info__director"
-              >
-                Cast: 
-              </div>,
             ],
             "className": "movie-details__info",
           },
@@ -388,30 +324,6 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": "overview",
-              "type": "div",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Director: ",
-                "className": "movie-details__info__director",
-              },
-              "ref": null,
-              "rendered": "Director: ",
-              "type": "div",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Cast: ",
-                "className": "movie-details__info__director",
-              },
-              "ref": null,
-              "rendered": "Cast: ",
               "type": "div",
             },
           ],

@@ -57,6 +57,19 @@ describe('MoviesPage', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    it('should match interface', () => {
+        expect(tree.instance().componentDidMount).toBeDefined();
+        expect(tree.instance().fetchMovies).toBeDefined();
+        expect(tree.instance().applyFilter).toBeDefined();
+        expect(tree.instance().setSearchBy).toBeDefined();
+        expect(tree.instance().setFilter).toBeDefined();
+        expect(tree.instance().setSortBy).toBeDefined();
+        expect(tree.instance().sortArray).toBeDefined();
+        expect(tree.instance().getFilteredMovies).toBeDefined();
+        expect(tree.instance().getFilteredAndSortMovies).toBeDefined();
+        expect(tree.instance().render).toBeDefined();
+    });
+
     it('should set sortBy in state', () => {
         tree.instance().setSortBy(eventMock);
         expect(tree.state().sortBy).toEqual(value);

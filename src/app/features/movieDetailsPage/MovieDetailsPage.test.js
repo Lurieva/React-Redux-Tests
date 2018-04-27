@@ -7,7 +7,7 @@ jest.mock('../../components/infoPanel/InfoPanel', () => 'InfoPanel');
 jest.mock('../../components/movies/Movies', () => 'Movies');
 jest.mock('../../components/sortBy/SortBy', () => 'SortBy');
 jest.mock('./movieDetails/MovieDetails', () => 'MovieDetails');
-jest.mock('./directorInfo/DirectorInfo', () => 'DirectorInfo');
+jest.mock('./genresInfo/GenresInfo', () => 'GenresInfo');
 
 describe('MovieDetailsPage', () => {
     let tree;
@@ -55,5 +55,13 @@ describe('MovieDetailsPage', () => {
 
     it('should render correctly ', () => {
         expect(tree).toMatchSnapshot();
+    });
+
+    it('should match interface', () => {
+        expect(tree.instance().componentDidMount).toBeDefined();
+        expect(tree.instance().componentWillReceiveProps).toBeDefined();
+        expect(tree.instance().getMovies).toBeDefined();
+        expect(tree.instance().getMovieDetail).toBeDefined();
+        expect(tree.instance().render).toBeDefined();
     });
 });

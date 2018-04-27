@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Input = ({ className, onChange }) => (
+const Input = ({ className, onChange, enterClick }) => (
     <input className={className}
-           onChange={onChange}/>
+           onChange={onChange}
+           onKeyPress={event => {
+               if (event.key === 'Enter') {
+                   enterClick()
+               }
+           }}/>
 );
 
 Input.propTypes = {  

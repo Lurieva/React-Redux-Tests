@@ -27,16 +27,17 @@ module.exports = merge(baseConfig, {
             files: {
                 js: ['bundle.js'],
             },
-        })
+        }),
     ],
     optimization: {
         namedModules: true,
         splitChunks: {
             cacheGroups: {
                 commons: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: 'vendors',
-                    chunks: 'all'
+                    name: 'commons',
+                    chunks: 'all',
+                    minSize: 0,
+                    minChunks: 2
                 }
             }
         },
