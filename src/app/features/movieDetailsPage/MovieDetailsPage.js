@@ -46,7 +46,7 @@ class MovieDetailsPage extends Component {
         const { movie, movies } = this.state;
 
         const filteredMovies = movies.filter(item => {
-            if (movie && movie.genres) {
+            if (movie && movie.genres && movie.id !== item.id) {
                 if (item.genres.some(genre => movie.genres.includes(genre))) {
                     return item;
                 }
