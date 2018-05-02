@@ -69,9 +69,15 @@ class MoviesPage extends Component {
     }
 
     filteredArray = (movies, searchBy, filter) => {
+        const search = filter.toLowerCase();
+
         return [...movies].filter((movie) => {
             if (movie[searchBy]) {
-                return movie[searchBy].toLowerCase().includes(filter.toLowerCase());
+                if (Array.isArray(movie[searchBy])) {
+                    return movie[searchBy].some(property => property.toLowerCase().includes(search))
+                } else {
+                    return movie[searchBy].toLowerCase().includes(search);
+                }
             }
         });
     }

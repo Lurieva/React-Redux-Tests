@@ -4,8 +4,8 @@ export const SEARCH_BY = {
         value: 'title'
     },
     DIRECTOR: {
-        label: 'Director',
-        value: 'director'
+        label: 'Genres',
+        value: 'genres'
     }
 }
 
