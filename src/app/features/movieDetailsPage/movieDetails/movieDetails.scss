@@ -36,9 +36,12 @@
             margin: 20px 0;
         }
 
-        &__year {
+        &__info {
+            width: 200px;
+            display: flex;
             color: white;
             margin-top: 10px;
+            justify-content: space-between;
         }
 
         &__director {
