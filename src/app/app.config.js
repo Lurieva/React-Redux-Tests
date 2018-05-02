@@ -4,7 +4,7 @@ export const SEARCH_BY = {
         value: 'title'
     },
     DIRECTOR: {
-        label: 'Genres',
+        label: 'Genre',
         value: 'genres'
     }
 }
