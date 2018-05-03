@@ -3,12 +3,13 @@ import { shallow } from 'enzyme';
 import Input from './Input';
 
 describe('Input', () => {
-    const mockFn = jest.fn();
+    const mockFnForChange = jest.fn();
+    const mockFnForEnter = jest.fn();
     let tree;
 
     beforeEach(() => {
         tree = shallow(
-            <Input className='classNameMock' onChange={mockFn} enterClick={mockFn}/>
+            <Input className='classNameMock' onChange={mockFnForChange} enterClick={mockFnForEnter}/>
         );
     });
 
@@ -22,11 +23,14 @@ describe('Input', () => {
 
     it('should call function when input change', () => {
         tree.simulate('change');
-        expect(mockFn).toHaveBeenCalled();
+
+        expect(mockFnForChange).toHaveBeenCalled();
     });
 
     it('should call function when enter press', () => {
         tree.simulate('keyPress', { key: 'Enter' });
-        expect(mockFn).toHaveBeenCalled();
+
+        expect(mockFnForEnter).toHaveBeenCalled();
+        expect(mockFnForChange).toHaveBeenCalled();
     });
 });
