@@ -51,9 +51,18 @@ ShallowWrapper {
             tagline
           </div>
           <div
-            className="movie-details__info__year"
+            className="movie-details__info__info"
           >
-            NaN
+            <div
+              className="movie-details__info__year"
+            >
+              NaN
+            </div>
+            <div
+              className="movie-details__info__runtime"
+            >
+               min
+            </div>
           </div>
           <div
             className="movie-details__info__overview"
@@ -109,9 +118,18 @@ ShallowWrapper {
               tagline
             </div>,
             <div
-              className="movie-details__info__year"
+              className="movie-details__info__info"
             >
-              NaN
+              <div
+                className="movie-details__info__year"
+              >
+                NaN
+              </div>
+              <div
+                className="movie-details__info__runtime"
+              >
+                 min
+              </div>
             </div>,
             <div
               className="movie-details__info__overview"
@@ -152,11 +170,53 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "NaN",
-              "className": "movie-details__info__year",
+              "children": Array [
+                <div
+                  className="movie-details__info__year"
+                >
+                  NaN
+                </div>,
+                <div
+                  className="movie-details__info__runtime"
+                >
+                   min
+                </div>,
+              ],
+              "className": "movie-details__info__info",
             },
             "ref": null,
-            "rendered": "NaN",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "NaN",
+                  "className": "movie-details__info__year",
+                },
+                "ref": null,
+                "rendered": "NaN",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    undefined,
+                    " min",
+                  ],
+                  "className": "movie-details__info__runtime",
+                },
+                "ref": null,
+                "rendered": Array [
+                  undefined,
+                  " min",
+                ],
+                "type": "div",
+              },
+            ],
             "type": "div",
           },
           Object {
@@ -206,9 +266,18 @@ ShallowWrapper {
               tagline
             </div>
             <div
-              className="movie-details__info__year"
+              className="movie-details__info__info"
             >
-              NaN
+              <div
+                className="movie-details__info__year"
+              >
+                NaN
+              </div>
+              <div
+                className="movie-details__info__runtime"
+              >
+                 min
+              </div>
             </div>
             <div
               className="movie-details__info__overview"
@@ -264,9 +333,18 @@ ShallowWrapper {
                 tagline
               </div>,
               <div
-                className="movie-details__info__year"
+                className="movie-details__info__info"
               >
-                NaN
+                <div
+                  className="movie-details__info__year"
+                >
+                  NaN
+                </div>
+                <div
+                  className="movie-details__info__runtime"
+                >
+                   min
+                </div>
               </div>,
               <div
                 className="movie-details__info__overview"
@@ -307,11 +385,53 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "NaN",
-                "className": "movie-details__info__year",
+                "children": Array [
+                  <div
+                    className="movie-details__info__year"
+                  >
+                    NaN
+                  </div>,
+                  <div
+                    className="movie-details__info__runtime"
+                  >
+                     min
+                  </div>,
+                ],
+                "className": "movie-details__info__info",
               },
               "ref": null,
-              "rendered": "NaN",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "NaN",
+                    "className": "movie-details__info__year",
+                  },
+                  "ref": null,
+                  "rendered": "NaN",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      undefined,
+                      " min",
+                    ],
+                    "className": "movie-details__info__runtime",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    undefined,
+                    " min",
+                  ],
+                  "type": "div",
+                },
+              ],
               "type": "div",
             },
             Object {

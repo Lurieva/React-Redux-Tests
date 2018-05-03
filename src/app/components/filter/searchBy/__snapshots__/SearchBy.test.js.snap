@@ -29,8 +29,8 @@ ShallowWrapper {
           "value": "title",
         },
         Object {
-          "label": "Director",
-          "value": "director",
+          "label": "Genre",
+          "value": "genres",
         },
       ],
       "param": "search",
@@ -55,8 +55,8 @@ ShallowWrapper {
             "value": "title",
           },
           Object {
-            "label": "Director",
-            "value": "director",
+            "label": "Genre",
+            "value": "genres",
           },
         ],
         "param": "search",

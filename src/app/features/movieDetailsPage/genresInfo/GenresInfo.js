@@ -8,7 +8,7 @@ const GenresInfo = ({ genres }) => {
 
     return (
         <div className="genresInfo">
-            { genresInfo && <span>Films by {genresInfo}</span>}
+            { genresInfo && <span>Films by {genresInfo} genre(s)</span>}
         </div>
     );
 };

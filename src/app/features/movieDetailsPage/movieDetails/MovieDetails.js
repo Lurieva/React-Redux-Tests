@@ -14,7 +14,10 @@ const MovieDetails = ({ movie }) => {
             <div className="movie-details__info">
                 <div className="movie-details__info__title">{movie.title}</div>
                 <div className="movie-details__info__tagline">{movie.tagline}</div>
-                <div className="movie-details__info__year">{year}</div>
+                <div className="movie-details__info__info">
+                    <div className="movie-details__info__year">{year}</div>
+                    <div className="movie-details__info__runtime">{movie.runtime} min</div>
+                </div>
                 <div className="movie-details__info__overview">{movie.overview}</div>
             </div>
         </div>

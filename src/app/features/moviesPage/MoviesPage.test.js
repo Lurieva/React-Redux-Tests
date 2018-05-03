@@ -104,4 +104,76 @@ describe('MoviesPage', () => {
         tree.instance().fetchMovies();
         expect(tree.state().movies).toEqual(moviesMock);
     });
+
+    it('should return movies if search field is array', () => {
+        const movies = [{
+            id: 1,
+            title: 'title_1',
+            genre: ['drama']
+        }];
+
+
+        const result = tree.instance().getFilteredMovies(movies, 'genre', 'dra');
+        expect(result).toEqual(movies);
+    });
+
+    it('should return movies if search field is string', () => {
+        const movies = [{
+            id: 1,
+            title: 'title_1',
+            genre: 'drama'
+        }];
+
+
+        const result = tree.instance().getFilteredMovies(movies, 'genre', 'dra');
+        expect(result).toEqual(movies);
+    });
+
+    it('should return movies after sort if sortBy = vote_average', () => {
+        const movies = [{
+            id: 1,
+            title: 'title_1',
+            genre: 'drama',
+            vote_average: 1
+        }, {
+            id: 2,
+            title: 'title_2',
+            genre: 'drama',
+            vote_average: 2
+        }];
+
+        const expectedResult = [{
+            id: 2,
+            title: 'title_2',
+            genre: 'drama',
+            vote_average: 2
+        }, {
+            id: 1,
+            title: 'title_1',
+            genre: 'drama',
+            vote_average: 1
+        }];
+
+        const result = tree.instance().sortArray(movies, 'vote_average');
+        expect(result).toEqual(expectedResult);
+    });
+
+    it('should return movies after sort if sortBy = release_date', () => {
+        const movies = [{
+            id: 1,
+            title: 'title_1',
+            genre: 'drama',
+            release_date: '12-01-2018'
+        }, {
+            id: 2,
+            title: 'title_2',
+            genre: 'drama',
+            release_date: '13-01-2018'
+        }];
+
+        const expectedResult = [...movies];
+
+        const result = tree.instance().sortArray(movies, 'release_date');
+        expect(result).toEqual(expectedResult);
+    });
 });
