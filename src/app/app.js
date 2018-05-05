@@ -1,27 +1,43 @@
 import React, { Fragment } from 'react';
+import { AppContainer } from 'react-hot-loader';
+
+import { Router, Route, Switch, Redirect } from 'react-router';
+import createBrowserHistory from 'history/createBrowserHistory';
+import ExampleBoundary from './ErrorBoundary'
+
+const history = createBrowserHistory();
 
 import '../styles/normalize.css';
+
 import './app.scss';
 
-import ComponentFirst from './componentFirst';
-import ComponentSecond from './componentSecond';
-import ComponentThird from './componentThird';
-import ComponentFourth from './componentFourth';
+import { MoviesPage, MovieDetailsPage } from './features';
+import { MainLayout, NotFound } from './components';
 
-const App = () => (
-    <Fragment>
-        <label>React.createElement</label>
-        <ComponentFirst />
-        <hr/>
-        <label>Functional components</label>
-        <ComponentSecond />
-        <hr/>
-        <label>React.Component</label>
-        <ComponentThird />
-        <hr/>
-        <label>React.PureComponent</label>
-        <ComponentFourth />
-    </Fragment>
-);
+const App = () => {
+    return (    
+        <MainLayout>
+            <Router history={history}>
+                <Switch>
+                    <Route path='/'
+                           exact={true}
+                           render={() => <Redirect to='/movies'/>} 
+                    />
+                    <Route
+                        exact={true}
+                        component={MoviesPage}
+                        path='/movies'
+                    />
+                    <Route
+                        exact={true}
+                        component={MovieDetailsPage}
+                        path='/movies/:movieId'
+                    />
+                    <Route component={NotFound}/>
+                </Switch>
+            </Router>
+        </MainLayout>
+    )
+}
 
 export default App;

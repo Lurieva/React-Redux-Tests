@@ -1,0 +1,13 @@
+.main-layout {
+    width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &__content {
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+    }
+}

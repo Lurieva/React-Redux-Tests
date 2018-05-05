@@ -1,0 +1,8 @@
+.moviesInfoPanel {
+    display: flex;
+    justify-content: space-between;
+
+    &__count {
+        font-weight: bold;
+    }
+}

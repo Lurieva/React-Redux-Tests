@@ -1,0 +1,36 @@
+.filter {
+    margin-top: 20px;
+    padding: 0 40px;
+
+    &__title {
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 20px 0;
+        font-size: 20px;
+    }
+
+    &__input {
+        width: 100%;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        border-bottom: 2px solid red;
+        color: white;
+    }
+
+    &__action {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 0;
+
+        &__apply-btn {
+            background: red;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 0 35px;
+            border: none;
+        }
+    }
+}
