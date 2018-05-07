@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import MoviesPage from './MoviesPage';
+import MoviesPage,  { mapStateToProps, mapDispatchToProps } from './MoviesPage';
 
 jest.mock('../../components/filter/Filter', () => 'Filter');
 jest.mock('../../components/header/Header', () => 'Header');
@@ -61,5 +61,21 @@ xdescribe('MoviesPage', () => {
         expect(tree.instance().componentDidMount).toBeDefined();
         expect(tree.instance().fetchMovies).toBeDefined();
         expect(tree.instance().render).toBeDefined();
+    });
+
+    it('should call fetch with params', () => {
+        tree.instance().props = {
+            movies: []
+        };
+        
+        tree.instance().componentDidMount();
+
+        expect(global.fetch).toHaveBeenCalledWith('http://react-cdp-api.herokuapp.com/movies');
+    }); 
+
+    it('should call fetch with params', () => {
+        tree.instance().fetchMovies();
+
+        expect(global.fetch).toHaveBeenCalledWith('http://react-cdp-api.herokuapp.com/movies');
     });
 });

@@ -6,23 +6,23 @@ import { BASE_URL } from '../../app.config';
 import { Filter, Header, InfoPanel, Movies, SortBy } from '../../components';
 import MoviesInfoPanel from './moviesInfoPanel/MoviesInfoPanel';
 
-import * as Actions from '../../../actions';
-import * as Selectors from '../../../selectors';
+import { receiveMovies, applyFilter, setSearchBy, setSortBy, setFilter } from '../../../actions';
+import { getMovies } from '../../../selectors';
 
 const mapStateToProps = (state) => ({
-    movies: Selectors.getMovies(state),
-    searchBy: Selectors.getSearchBy(state),
-    sortBy: Selectors.getSortBy(state),
-    filter: Selectors.getFilter(state)
+    movies: getMovies(state),
+    searchBy: state.searchBy,
+    sortBy: state.sortBy,
+    filter: state.filter
 });
-  
-const mapDispatchToProps = (dispatch) => ({
-    receiveMovies: (movies) => dispatch(Actions.receiveMovies(movies)),
-    applyFilter: () => dispatch(Actions.applyFilter()),
-    setSearchBy: ({target}) => dispatch(Actions.setSearchBy(target.value)),
-    setSortBy: ({target}) => dispatch(Actions.setSortBy(target.value)),
-    setFilter: ({target}) => dispatch(Actions.setFilter(target.value)),
-});
+
+const mapDispatchToProps = {
+    receiveMovies,
+    applyFilter,
+    setSearchBy,
+    setSortBy,
+    setFilter
+};
 
 class MoviesPage extends Component {
     componentDidMount() {

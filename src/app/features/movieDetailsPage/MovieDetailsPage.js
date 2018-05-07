@@ -6,18 +6,18 @@ import MovieDetails from './movieDetails/MovieDetails';
 import GenresInfo from './genresInfo/GenresInfo';
 import { BASE_URL } from '../../app.config';
 
-import * as Actions from '../../../actions';
-import * as Selectors from '../../../selectors';
+import { receiveMovies, receiveMovie } from '../../../actions';
+import { getMoviesByGenre } from '../../../selectors';
 
 const mapStateToProps = (state) => ({
-    movies: Selectors.getMoviesByGenre(state),
-    movie: Selectors.getMovie(state)
+    movies: getMoviesByGenre(state),
+    movie: state.movie
 });
   
-const mapDispatchToProps = (dispatch) => ({
-    receiveMovies: (movies) => dispatch(Actions.receiveMovies(movies)),
-    receiveMovie: (movie) => dispatch(Actions.receiveMovie(movie))
-});
+const mapDispatchToProps = {
+    receiveMovies,
+    receiveMovie
+};
 
 class MovieDetailsPage extends Component {
     componentDidMount () {

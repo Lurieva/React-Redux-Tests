@@ -9,30 +9,6 @@ export const getMovies = (state) => {
     }    
 };
 
-export const getMovie = (state) => {
-    const { movie } = state;
-    
-    return movie;
-};
-
-export const getSearchBy = (state) => {
-    const { searchBy } = state;
-
-    return searchBy;
-}
-
-export const getSortBy = (state) => {
-    const { sortBy } = state;
-
-    return sortBy;
-}
-
-export const getFilter = (state) => {
-    const { filter } = state;
-
-    return filter;
-}
-
 export const getMoviesByGenre = (state) => {
     const { movies, movie } = state;
 
