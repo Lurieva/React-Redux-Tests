@@ -6,8 +6,8 @@ import MovieDetails from './movieDetails/MovieDetails';
 import GenresInfo from './genresInfo/GenresInfo';
 import { BASE_URL } from '../../app.config';
 
-import { receiveMovies, receiveMovie } from '../../../actions';
-import { getMoviesByGenre } from '../../../selectors';
+import { receiveMovies, receiveMovie } from '../../../actions/actions';
+import { getMoviesByGenre } from '../../../selectors/index';
 
 const mapStateToProps = (state) => ({
     movies: getMoviesByGenre(state),

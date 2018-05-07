@@ -1,5 +1,5 @@
-import * as ACTIONS from './actionTypes';
-import { SEARCH_BY, SORT_BY } from './app/app.config';
+import * as ACTIONS from '../actions/actionTypes';
+import { SEARCH_BY, SORT_BY } from '../app/app.config';
 
 const initialState = {
     movies: [],

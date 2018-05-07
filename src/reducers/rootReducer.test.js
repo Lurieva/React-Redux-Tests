@@ -1,7 +1,7 @@
 import React from 'react';
 import rootReducer from './rootReducer';
-import { SEARCH_BY, SORT_BY } from './app/app.config';
-import * as ACTIONS from './actionTypes';
+import { SEARCH_BY, SORT_BY } from '../app/app.config';
+import * as ACTIONS from '../actions/actionTypes';
 
 describe('rootReducer', () => {
     const stateMock = {

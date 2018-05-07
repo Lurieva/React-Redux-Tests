@@ -6,7 +6,7 @@ import { BASE_URL } from '../../app.config';
 import { Filter, Header, InfoPanel, Movies, SortBy } from '../../components';
 import MoviesInfoPanel from './moviesInfoPanel/MoviesInfoPanel';
 
-import { receiveMovies, applyFilter, setSearchBy, setSortBy, setFilter } from '../../../actions';
+import { receiveMovies, applyFilter, setSearchBy, setSortBy, setFilter } from '../../../actions/actions';
 import { getMovies } from '../../../selectors';
 
 const mapStateToProps = (state) => ({

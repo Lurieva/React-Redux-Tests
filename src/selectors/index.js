@@ -1,4 +1,4 @@
-import { SORT_BY } from './app/app.config';
+import { SORT_BY } from '../app/app.config';
 
 export const getMovies = (state) => {
     const { movies, searchBy, appliedFilter, sortBy } = state;
