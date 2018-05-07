@@ -6,7 +6,7 @@ import { BASE_URL } from '../../app.config';
 import { Filter, Header, InfoPanel, Movies, SortBy } from '../../components';
 import MoviesInfoPanel from './moviesInfoPanel/MoviesInfoPanel';
 
-import { receiveMovies, applyFilter, setSearchBy, setSortBy, setFilter } from '../../../actions/actions';
+import { receiveMovies, applyFilter, setSearchBy, setSortBy, setFilter, loadMovies } from '../../../actions/actions';
 import { getMovies } from '../../../selectors';
 
 const mapStateToProps = (state) => ({
@@ -21,13 +21,14 @@ const mapDispatchToProps = {
     applyFilter,
     setSearchBy,
     setSortBy,
-    setFilter
+    setFilter,
+    loadMovies
 };
 
 class MoviesPage extends Component {
     componentDidMount() {
         if (!this.props.movies.length) {
-            this.fetchMovies();
+            this.props.loadMovies();
         }
     }
 

@@ -6,7 +6,7 @@ import MovieDetails from './movieDetails/MovieDetails';
 import GenresInfo from './genresInfo/GenresInfo';
 import { BASE_URL } from '../../app.config';
 
-import { receiveMovies, receiveMovie } from '../../../actions/actions';
+import { receiveMovies, receiveMovie, loadMovie, loadMovies } from '../../../actions/actions';
 import { getMoviesByGenre } from '../../../selectors/index';
 
 const mapStateToProps = (state) => ({
@@ -16,17 +16,19 @@ const mapStateToProps = (state) => ({
   
 const mapDispatchToProps = {
     receiveMovies,
-    receiveMovie
+    receiveMovie,
+    loadMovie,
+    loadMovies
 };
 
 class MovieDetailsPage extends Component {
     componentDidMount () {
         const movieId = this.props.match.params.movieId;
           
-        this.getMovieDetail(movieId);
+        this.props.loadMovie(movieId);
         
         if (!this.props.movies.length) {
-            this.getMovies();
+            this.props.loadMovies();
         }
     }
 
@@ -34,20 +36,8 @@ class MovieDetailsPage extends Component {
         const nextMovieId = nextProps.match.params.movieId;
 
         if (this.props.match.params.movieId !== nextMovieId) {
-            this.getMovieDetail(nextMovieId);
+            this.props.loadMovie(nextMovieId);
         }
-    }
-
-    getMovieDetail(movieId) {
-        fetch(`${BASE_URL}movies/${movieId}`)
-            .then((res) => res.json())
-            .then((movie) => this.props.receiveMovie(movie));
-    }
-
-    getMovies() {
-        fetch(`${BASE_URL}movies`)
-            .then((res) => res.json())
-            .then((res) => this.props.receiveMovies(res.data));
     }
 
     render() {
