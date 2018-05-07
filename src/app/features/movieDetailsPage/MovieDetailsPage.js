@@ -39,13 +39,13 @@ class MovieDetailsPage extends Component {
     }
 
     getMovieDetail(movieId) {
-        const movie = fetch(`${BASE_URL}movies/${movieId}`)
+        fetch(`${BASE_URL}movies/${movieId}`)
             .then((res) => res.json())
             .then((movie) => this.props.receiveMovie(movie));
     }
 
     getMovies() {
-        const movies = fetch(`${BASE_URL}movies`)
+        fetch(`${BASE_URL}movies`)
             .then((res) => res.json())
             .then((res) => this.props.receiveMovies(res.data));
     }

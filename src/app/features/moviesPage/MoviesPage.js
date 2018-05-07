@@ -32,9 +32,7 @@ class MoviesPage extends Component {
     }
 
     fetchMovies() {
-        const url = `${BASE_URL}movies`;
-
-        fetch(url)
+        fetch(`${BASE_URL}movies`)
             .then((res) => res.json())
             .then((res) => this.props.receiveMovies(res.data));
     }
