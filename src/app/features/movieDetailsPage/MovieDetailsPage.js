@@ -42,16 +42,18 @@ class MovieDetailsPage extends Component {
             });
     }
 
-    render() {
-        const { movie, movies } = this.state;
-
-        const filteredMovies = movies.filter(item => {
+    getFilteredMovies(movie, movies) {       
+        return movies.filter(item => {
             if (movie && movie.genres && movie.id !== item.id) {
                 if (item.genres.some(genre => movie.genres.includes(genre))) {
                     return item;
                 }
             }            
         });
+    }
+
+    render() {
+        const { movie, movies } = this.state;
 
         return (
             <Fragment>
@@ -61,7 +63,7 @@ class MovieDetailsPage extends Component {
                 <InfoPanel>
                     <GenresInfo genres={movie.genres}/>
                 </InfoPanel>
-                <Movies movies={filteredMovies} />
+                <Movies movies={this.getFilteredMovies(movie, movies)} />
             </Fragment>
         )
     }

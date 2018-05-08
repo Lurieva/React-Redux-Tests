@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { BASE_URL } from '../../app.config';
 
-import { Filter, Header, Footer, InfoPanel, Movies, SortBy } from '../../components';
+import { Filter, Header, InfoPanel, Movies, SortBy } from '../../components';
 import MoviesInfoPanel from './moviesInfoPanel/MoviesInfoPanel';
 import { SEARCH_BY, SORT_BY, API_KEY } from '../../app.config';
  
@@ -68,7 +68,7 @@ class MoviesPage extends Component {
         });
     }
 
-    filteredArray = (movies, searchBy, filter) => {
+    getFilteredMovies = (movies, searchBy, filter) => {
         const search = filter.toLowerCase();
 
         return [...movies].filter((movie) => {
@@ -82,15 +82,15 @@ class MoviesPage extends Component {
         });
     }
 
-    getFilteredMovies = () => {
+    getFilteredAndSortMovies = () => {
         const { movies, searchBy, appliedFilter, sortBy } = this.state;
        
-        return (appliedFilter !== null) ? this.sortArray(this.filteredArray(movies, searchBy, appliedFilter), sortBy) : [];
+        return (appliedFilter !== null) ? this.sortArray(this.getFilteredMovies(movies, searchBy, appliedFilter), sortBy) : [];
     }
 
     render() {
         const { sortBy, searchBy, filter } = this.state;
-        const filteredMovies = this.getFilteredMovies();
+        const filteredMovies = this.getFilteredAndSortMovies();
 
         return (
             <Fragment>

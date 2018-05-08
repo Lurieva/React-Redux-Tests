@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioGroup should render correctly  1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <RadioGroup
+    groupClassName="classNameMock"
+    name="radio"
+    onChange={[MockFunction]}
+    options={
+      Array [
+        Object {
+          "option": "opt",
+          "value": "value",
+        },
+      ]
+    }
+    param="value"
+    title="title"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <span
+          className="classNameMock__title"
+        >
+          title
+        </span>,
+        <div
+          className="btn-group"
+          onChange={[MockFunction]}
+        >
+          <label
+            className="btn radio-active"
+          >
+            <input
+              defaultChecked={true}
+              name="radio"
+              type="radio"
+              value="value"
+            />
+             
+          </label>
+        </div>,
+      ],
+      "className": "classNameMock",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "title",
+          "className": "classNameMock__title",
+        },
+        "ref": null,
+        "rendered": "title",
+        "type": "span",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label
+              className="btn radio-active"
+            >
+              <input
+                defaultChecked={true}
+                name="radio"
+                type="radio"
+                value="value"
+              />
+               
+            </label>,
+          ],
+          "className": "btn-group",
+          "onChange": [MockFunction],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "value",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <input
+                  defaultChecked={true}
+                  name="radio"
+                  type="radio"
+                  value="value"
+                />,
+                " ",
+                undefined,
+              ],
+              "className": "btn radio-active",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "defaultChecked": true,
+                  "name": "radio",
+                  "type": "radio",
+                  "value": "value",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+              " ",
+              undefined,
+            ],
+            "type": "label",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <span
+            className="classNameMock__title"
+          >
+            title
+          </span>,
+          <div
+            className="btn-group"
+            onChange={[MockFunction]}
+          >
+            <label
+              className="btn radio-active"
+            >
+              <input
+                defaultChecked={true}
+                name="radio"
+                type="radio"
+                value="value"
+              />
+               
+            </label>
+          </div>,
+        ],
+        "className": "classNameMock",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "title",
+            "className": "classNameMock__title",
+          },
+          "ref": null,
+          "rendered": "title",
+          "type": "span",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label
+                className="btn radio-active"
+              >
+                <input
+                  defaultChecked={true}
+                  name="radio"
+                  type="radio"
+                  value="value"
+                />
+                 
+              </label>,
+            ],
+            "className": "btn-group",
+            "onChange": [MockFunction],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "value",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <input
+                    defaultChecked={true}
+                    name="radio"
+                    type="radio"
+                    value="value"
+                  />,
+                  " ",
+                  undefined,
+                ],
+                "className": "btn radio-active",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "defaultChecked": true,
+                    "name": "radio",
+                    "type": "radio",
+                    "value": "value",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+                " ",
+                undefined,
+              ],
+              "type": "label",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

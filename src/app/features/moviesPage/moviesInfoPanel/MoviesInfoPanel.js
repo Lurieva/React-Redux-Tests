@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './MoviesInfoPanel.scss';
 
@@ -14,5 +15,10 @@ const MoviesInfoPanel = ({ count, children }) => (
         </div>
     </div>
 );
+
+MoviesInfoPanel.propTypes = {
+    count: PropTypes.number,
+    children: PropTypes.element
+};
 
 export default MoviesInfoPanel;
