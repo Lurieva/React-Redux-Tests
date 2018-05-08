@@ -4,7 +4,8 @@ class LocalStorageApi {
     }
 
     static getItem(key) {
-        return JSON.parse(localStorage.getItem(key));
+        const res = localStorage.getItem(key);
+        return res && JSON.parse(res);
     }
 };
 

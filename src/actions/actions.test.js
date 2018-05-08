@@ -91,7 +91,7 @@ describe('actions', () => {
         expect(actions.applyFilter()).toEqual(expectedAction)
     });
 
-    xdescribe('loading movies', () => {
+    describe('loading movies', () => {
         beforeEach(() => {
             global.fetch = jest.fn().mockImplementation(() => {
                 const p = new Promise((resolve, reject) => {
@@ -113,14 +113,14 @@ describe('actions', () => {
             const KEY = 'movies';
             const expectedAction = {
                 type: types.RECEIVE_MOVIES,
-                payload: moviesMock 
+                payload: moviesMock
             };
 
             const store = mockStore({ movies: [] });
    
             return store.dispatch(actions.loadMovies()).then(() => {
                 expect(global.fetch).toHaveBeenCalledWith('http://react-cdp-api.herokuapp.com/movies');
-                expect(localStorage.setItem).toHaveBeenLastCalledWith(KEY, moviesMock);
+                expect(localStorage.setItem).toHaveBeenLastCalledWith(KEY, JSON.stringify(moviesMock));
                 expect(actions.receiveMovies(moviesMock)).toEqual(expectedAction);
             });
         });
@@ -129,12 +129,12 @@ describe('actions', () => {
             const KEY = 'movies';
             const expectedAction = {
                 type: types.RECEIVE_MOVIES,
-                payload: moviesMock 
+                payload: moviesMock
             };
     
             const store = mockStore({ movies: [] });
     
-            localStorage.setItem(KEY, moviesMock);
+            localStorage.setItem(KEY, JSON.stringify(moviesMock));
             store.dispatch(actions.loadMovies());
     
             expect(actions.receiveMovies(moviesMock)).toEqual(expectedAction);
