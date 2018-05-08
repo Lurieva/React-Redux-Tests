@@ -14,7 +14,7 @@ describe('rootReducer', () => {
     };
 
     it('should return the initial state', () => {
-      expect(rootReducer(stateMock, {})).toEqual(stateMock);
+        expect(rootReducer(stateMock, {})).toEqual(stateMock);
     });
 
     it('should handle RECEIVE_MOVIES', () => {

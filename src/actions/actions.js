@@ -1,6 +1,5 @@
 import * as ACTIONS from './actionTypes';
-import moviesApi from './moviesApi';
-import localStorageApi from './localStorageApi';
+import { BASE_URL } from '../app/app.config';
 
 export const receiveMovies = (payload) => ({
     type: ACTIONS.RECEIVE_MOVIES,
@@ -32,21 +31,23 @@ export const applyFilter = () => ({
 });
 
 export function loadMovies() {
-    const cachedMovies = localStorageApi.getData('movies');
-    console.log('cached', cachedMovies)
+    const KEY = 'movies';
+    const cachedMovies = localStorage.getItem(KEY);
 
     if (cachedMovies) {
         return dispatch => dispatch(receiveMovies(cachedMovies));
     } else {
-        return dispatch => moviesApi.getAllMovies()
+        return dispatch => fetch(`${BASE_URL}movies`)
+            .then(res => res.json())
             .then(movies => {
-                localStorageApi.setData('movies', movies.data);
+                localStorage.setItem(KEY, movies.data);
                 dispatch(receiveMovies(movies.data));
             });
     }
 }
 
-export function loadMovie(id) {
-    return dispatch => moviesApi.getMovie(id)
+export function loadMovie(movieId) {
+    return dispatch => fetch(`${BASE_URL}movies/${movieId}`)
+        .then((res) => res.json())
         .then(movie => dispatch(receiveMovie(movie)));
 }
