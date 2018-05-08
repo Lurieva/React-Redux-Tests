@@ -29,23 +29,6 @@ xdescribe('MovieDetailsPage', () => {
     ];
 
     beforeEach(() => {
-        global.fetch = jest.fn().mockImplementation(() => {
-            const p = new Promise((resolve, reject) => {
-                resolve({
-                    ok: true, 
-                    json: () => { 
-                        return {
-                            data: moviesMock
-                        };
-                    }
-                });
-            });
-            
-            return p;
-        });
-    });
-
-    beforeEach(() => {
         tree = shallow(<MovieDetailsPage match={matchMock}/>);
     });
 
@@ -60,42 +43,6 @@ xdescribe('MovieDetailsPage', () => {
     it('should match interface', () => {
         expect(tree.instance().componentDidMount).toBeDefined();
         expect(tree.instance().componentWillReceiveProps).toBeDefined();
-        expect(tree.instance().getMovies).toBeDefined();
-        expect(tree.instance().getMovieDetail).toBeDefined();
         expect(tree.instance().render).toBeDefined();
     });
-
-    it('should call fetch when component did mount', () => {
-        tree.instance().props = {
-            match: {
-                params: {
-                    movieId: 2
-                }
-            }
-        };
-        tree.instance().componentDidMount();
-
-        expect(global.fetch).toHaveBeenCalledWith('http://react-cdp-api.herokuapp.com/movies/2');
-        expect(global.fetch).toHaveBeenCalledWith('http://react-cdp-api.herokuapp.com/movies');
-    });
-
-    it('should call fetch', () => {
-        const props = {
-            match: {
-                params: {
-                    movieId: 3
-                }
-            }
-        };
-
-        tree.instance().props = {
-            match: {
-                params: {
-                    movieId: 2
-                }
-            }
-        };
-        tree.instance().componentWillReceiveProps(props);
-        expect(global.fetch).toHaveBeenCalledWith('http://react-cdp-api.herokuapp.com/movies/2');
-    });   
 });

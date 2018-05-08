@@ -32,12 +32,6 @@ class MoviesPage extends Component {
         }
     }
 
-    fetchMovies() {
-        fetch(`${BASE_URL}movies`)
-            .then((res) => res.json())
-            .then((res) => this.props.receiveMovies(res.data));
-    }
-
     render() {
         const { searchBy, filter, sortBy, movies, setSearchBy, setFilter, applyFilter, setSortBy } = this.props;       
 
