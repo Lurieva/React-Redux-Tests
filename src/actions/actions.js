@@ -12,19 +12,19 @@ export const receiveMovie = (payload) => ({
     payload
 });
 
-export const setSortBy = ({target}) => ({
+export const setSortBy = (payload) => ({
     type: ACTIONS.SET_SORT_BY,
-    payload: target.value
+    payload
 });
 
-export const setSearchBy = ({target}) => ({
+export const setSearchBy = (payload) => ({
     type: ACTIONS.SET_SEARCH_BY,
-    payload: target.value
+    payload
 });
 
-export const setFilter = ({target}) => ({
+export const setFilter = (payload) => ({
     type: ACTIONS.SET_FILTER,
-    payload: target.value
+    payload
 });
 
 export const applyFilter = () => ({

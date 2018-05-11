@@ -27,27 +27,45 @@ const mapDispatchToProps = {
 
 class MoviesPage extends Component {
     componentDidMount() {
-        if (!this.props.movies.length) {
-            this.props.loadMovies();
+        const { movies, loadMovies } = this.props;
+
+        if (!movies.length) {
+            loadMovies();
         }
+    }
+    
+    setSearchBy = ({target}) => {
+        this.props.setSearchBy(target.value);
+    }
+
+    setSortBy = ({target}) => {
+        this.props.setSortBy(target.value);
+    }
+
+    setFilter = ({target}) => {
+        this.props.setFilter(target.value);
+    }
+
+    applyFilter = () => {
+        this.props.applyFilter();
     }
 
     render() {
-        const { searchBy, filter, sortBy, movies, setSearchBy, setFilter, applyFilter, setSortBy } = this.props;       
+        const { searchBy, filter, sortBy, movies } = this.props;       
 
         return (
             <Fragment>
                 <Header isShowSearchBtn={false}>
                     <Filter searchBy={searchBy}
                             filter={filter}
-                            onChangeSearchBy={setSearchBy}
-                            onFilterChange={setFilter}
-                            onApplyFilter={applyFilter} />
+                            onChangeSearchBy={this.setSearchBy}
+                            onFilterChange={this.setFilter}
+                            onApplyFilter={this.applyFilter} />
                 </Header>
                 <InfoPanel>
                     <MoviesInfoPanel count={movies.length}>
                         <SortBy sortBy={sortBy}
-                                onChangeSortBy={setSortBy}/>
+                                onChangeSortBy={this.setSortBy}/>
                     </MoviesInfoPanel>
                 </InfoPanel>
                 <Movies movies={movies}/>

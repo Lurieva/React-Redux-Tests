@@ -40,47 +40,32 @@ describe('actions', () => {
 
     it('should create an action to set sortBy', () => {
         const value = 'rating';
-        const payload = {
-            target: {
-                value
-            }
-        };
         const expectedAction = {
             type: types.SET_SORT_BY,
             payload: value
         };
 
-        expect(actions.setSortBy(payload)).toEqual(expectedAction)
+        expect(actions.setSortBy(value)).toEqual(expectedAction)
     });
 
     it('should create an action to set searchBy', () => {
         const value = 'title';
-        const payload = {
-            target: {
-                value
-            }
-        };
         const expectedAction = {
             type: types.SET_SEARCH_BY,
             payload: value
         };
 
-        expect(actions.setSearchBy(payload)).toEqual(expectedAction)
+        expect(actions.setSearchBy(value)).toEqual(expectedAction)
     });
 
     it('should create an action to set filter', () => {
         const value = 'filter';
-        const payload = {
-            target: {
-                value
-            }
-        };
         const expectedAction = {
             type: types.SET_FILTER,
             payload: value
         };
 
-        expect(actions.setFilter(payload)).toEqual(expectedAction)
+        expect(actions.setFilter(value)).toEqual(expectedAction)
     });
 
     it('should create an action to apply filter', () => {
