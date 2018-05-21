@@ -3,5 +3,6 @@ module.exports = {
     moduleNameMapper: {
         "\.scss$": "identity-obj-proxy"
     },
-    setupTestFrameworkScriptFile: './test/test-setup.js'
+    setupTestFrameworkScriptFile: './test/test-setup.js',
+    setupFiles: ["jest-localstorage-mock"]
 };

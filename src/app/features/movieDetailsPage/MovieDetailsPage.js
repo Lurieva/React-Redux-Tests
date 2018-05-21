@@ -1,59 +1,47 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
 
 import { InfoPanel, Movies, Header } from '../../components';
 import MovieDetails from './movieDetails/MovieDetails';
 import GenresInfo from './genresInfo/GenresInfo';
 import { BASE_URL } from '../../app.config';
 
-class MovieDetailsPage extends Component {
-    state = {
-        movie: {},
-        movies: []
-    }
+import { receiveMovies, receiveMovie, loadMovie, loadMovies } from '../../../actions/actions';
+import { getMoviesByGenre } from '../../../selectors/index';
 
+const mapStateToProps = (state) => ({
+    movies: getMoviesByGenre(state),
+    movie: state.movie
+});
+  
+const mapDispatchToProps = {
+    receiveMovies,
+    receiveMovie,
+    loadMovie,
+    loadMovies
+};
+
+class MovieDetailsPage extends Component {
     componentDidMount () {
         const movieId = this.props.match.params.movieId;
           
-        this.getMovieDetail(movieId);
-        this.getMovies();
+        this.props.loadMovie(movieId);
+        
+        if (!this.props.movies.length) {
+            this.props.loadMovies();
+        }
     }
 
     componentWillReceiveProps(nextProps) {
         const nextMovieId = nextProps.match.params.movieId;
 
         if (this.props.match.params.movieId !== nextMovieId) {
-            this.getMovieDetail(nextMovieId);
+            this.props.loadMovie(nextMovieId);
         }
     }
 
-    getMovieDetail(movieId) {
-        const movie = fetch(`${BASE_URL}movies/${movieId}`)
-            .then((res) => res.json())
-            .then((movie) => {
-                this.setState(() => ({ movie }));
-            });
-    }
-
-    getMovies() {
-        const movies = fetch(`${BASE_URL}movies`)
-            .then((res) => res.json())
-            .then((res) => {
-                this.setState(() => ({ movies: res.data }));
-            });
-    }
-
-    getFilteredMovies(movie, movies) {       
-        return movies.filter(item => {
-            if (movie && movie.genres && movie.id !== item.id) {
-                if (item.genres.some(genre => movie.genres.includes(genre))) {
-                    return item;
-                }
-            }            
-        });
-    }
-
     render() {
-        const { movie, movies } = this.state;
+        const { movie, movies } = this.props;
 
         return (
             <Fragment>
@@ -63,10 +51,13 @@ class MovieDetailsPage extends Component {
                 <InfoPanel>
                     <GenresInfo genres={movie.genres}/>
                 </InfoPanel>
-                <Movies movies={this.getFilteredMovies(movie, movies)} />
+                <Movies movies={movies} />
             </Fragment>
         )
     }
 };
 
-export default MovieDetailsPage;
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(MovieDetailsPage);

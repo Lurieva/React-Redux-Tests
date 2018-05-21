@@ -5,92 +5,53 @@ import { BASE_URL } from '../../app.config';
 
 import { Filter, Header, InfoPanel, Movies, SortBy } from '../../components';
 import MoviesInfoPanel from './moviesInfoPanel/MoviesInfoPanel';
-import { SEARCH_BY, SORT_BY, API_KEY } from '../../app.config';
- 
-class MoviesPage extends Component {
-    state = {
-        movies: [],
-        searchBy: SEARCH_BY.TITLE.value,
-        filter: '',
-        sortBy: SORT_BY.RELEASE_DATE.value,
-        appliedFilter: null
-    };
 
+import { receiveMovies, applyFilter, setSearchBy, setSortBy, setFilter, loadMovies } from '../../../actions/actions';
+import { getMovies } from '../../../selectors';
+
+const mapStateToProps = (state) => ({
+    movies: getMovies(state),
+    searchBy: state.searchBy,
+    sortBy: state.sortBy,
+    filter: state.filter
+});
+
+const mapDispatchToProps = {
+    receiveMovies,
+    applyFilter,
+    setSearchBy,
+    setSortBy,
+    setFilter,
+    loadMovies
+};
+
+class MoviesPage extends Component {
     componentDidMount() {
-        this.fetchMovies();
+        const { movies, loadMovies } = this.props;
+
+        if (!movies.length) {
+            loadMovies();
+        }
+    }
+    
+    setSearchBy = ({target}) => {
+        this.props.setSearchBy(target.value);
     }
 
-    fetchMovies() {
-        const url = `${BASE_URL}movies`;
+    setSortBy = ({target}) => {
+        this.props.setSortBy(target.value);
+    }
 
-        fetch(url)
-            .then((res) => res.json())
-            .then((res) => {
-                this.setState(() => ({ movies: res.data }));
-            });
+    setFilter = ({target}) => {
+        this.props.setFilter(target.value);
     }
 
     applyFilter = () => {
-        const { filter } = this.state;
-
-        this.setState({
-            appliedFilter: filter
-        });
-    }
-
-    setSearchBy = ({ target }) => {
-        this.setState({
-            searchBy: target.value
-        });
-    }
-
-    setFilter = ({ target }) => {
-        this.setState({
-            filter: target.value
-        });
-    }
-
-    setSortBy = ({ target }) => {
-        this.setState({
-            sortBy: target.value
-        });
-    }
-
-    sortArray = (movies, sortBy) => {
-        return [...movies].sort((a, b) => {
-            if (sortBy === SORT_BY.RELEASE_DATE.value) {
-                return new Date(b[sortBy]) - new Date(a[sortBy]);
-            }
-
-            if (sortBy === SORT_BY.RATING.value) {
-                return b[sortBy] - a[sortBy]; 
-            }
-        });
-    }
-
-    getFilteredMovies = (movies, searchBy, filter) => {
-        const search = filter.toLowerCase();
-
-        return [...movies].filter((movie) => {
-            if (movie[searchBy]) {
-                if (Array.isArray(movie[searchBy])) {
-                    return movie[searchBy].some(property => property.toLowerCase().includes(search))
-                } else {
-                    return movie[searchBy].toLowerCase().includes(search);
-                }
-            }
-        });
-    }
-
-    getFilteredAndSortMovies = () => {
-        const { movies, searchBy, appliedFilter, sortBy } = this.state;
-       
-        return (appliedFilter !== null) ? this.sortArray(this.getFilteredMovies(movies, searchBy, appliedFilter), sortBy) : [];
+        this.props.applyFilter();
     }
 
     render() {
-        const { sortBy, searchBy, filter } = this.state;
-        const filteredMovies = this.getFilteredAndSortMovies();
+        const { searchBy, filter, sortBy, movies } = this.props;       
 
         return (
             <Fragment>
@@ -102,15 +63,18 @@ class MoviesPage extends Component {
                             onApplyFilter={this.applyFilter} />
                 </Header>
                 <InfoPanel>
-                    <MoviesInfoPanel count={filteredMovies.length}>
+                    <MoviesInfoPanel count={movies.length}>
                         <SortBy sortBy={sortBy}
                                 onChangeSortBy={this.setSortBy}/>
                     </MoviesInfoPanel>
                 </InfoPanel>
-                <Movies movies={filteredMovies}/>
+                <Movies movies={movies}/>
             </Fragment>
         )
     }
 };
 
-export default MoviesPage;
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(MoviesPage);

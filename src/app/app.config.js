@@ -3,7 +3,7 @@ export const SEARCH_BY = {
         label: 'Title',
         value: 'title'
     },
-    DIRECTOR: {
+    GENRES: {
         label: 'Genre',
         value: 'genres'
     }

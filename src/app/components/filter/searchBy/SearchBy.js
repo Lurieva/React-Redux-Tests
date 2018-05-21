@@ -10,7 +10,7 @@ const SearchBy = ({ searchBy, onChange }) => (
     <RadioGroup name={'search'}
                 groupClassName={'searchBy'}
                 param={searchBy} 
-                options={[SEARCH_BY.TITLE, SEARCH_BY.DIRECTOR]}
+                options={[SEARCH_BY.TITLE, SEARCH_BY.GENRES]}
                 title={'Search By'}
                 onChange={onChange} />
 );
